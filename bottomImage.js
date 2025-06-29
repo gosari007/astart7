@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // 하단 이미지/동영상 숨김 상태로 초기화
   hideBottomImage();
   
-  // 시작 버튼 클릭 시 하단 미디어 시작
+  // 시작 버튼 클릭 시 하단 미디어는 첫 번째 폭발에서 시작하므로 여기서는 시작하지 않음
   document.getElementById('startBtn').addEventListener('click', function() {
-    startBottomMediaShow();
+    // startBottomMediaShow(); // 이 줄을 주석 처리하여 시작 버튼에서는 하단 미디어를 시작하지 않음
   });
   
   // 정지 버튼 클릭 시 하단 미디어 정지
@@ -91,15 +91,17 @@ function hideBottomImage() {
     
     // 비디오 애니메이션 효과 제거
     if (bottomVideo) {
-      bottomVideo.style.transform = 'scale(0)';
       bottomVideo.style.opacity = '0';
       bottomVideo.pause();
     }
     
+    // 컨테이너를 아래로 슬라이드하여 숨김
+    bottomImageContainer.style.bottom = '-150vh';
+    
     // 애니메이션 완료 후 컨테이너 숨기기
     setTimeout(() => {
       bottomImageContainer.style.display = 'none';
-    }, 1500); // 1.5초 후 완전히 숨김
+    }, 3000); // 3초 후 완전히 숨김
   }
 }
 
@@ -110,14 +112,17 @@ function showBottomMedia(index) {
   
   if (!bottomImageContainer) return;
   
+  console.log(`하단 미디어 표시 시도: ${index}`);
+  
   // 이미지와 동영상 요소를 모두 초기화
   resetBottomMediaElements();
 
-  // 먼저 MP4 파일이 존재하는지 확인 (bottom 폴더 내에서)
+  // 먼저 bottom 폴더 내에서 MP4 파일 확인
   checkFileExists(`images/bottom/${index}.mp4`)
     .then(exists => {
       if (exists) {
         // MP4 파일이 존재하면 비디오 요소 사용
+        console.log(`하단 폴더에서 동영상 찾음: ${index}.mp4`);
         showBottomVideoContent(index);
       } else {
         // MP4 파일이 없으면 이미지 파일(jpg) 확인
@@ -125,6 +130,7 @@ function showBottomMedia(index) {
           .then(imageExists => {
             if (imageExists) {
               // JPG 파일이 존재하면 이미지 요소 사용
+              console.log(`하단 폴더에서 이미지 찾음: ${index}.jpg`);
               showBottomImageContent(index);
             } else {
               // 어떤 파일도 존재하지 않으면 인덱스 초기화하고 다시 시도
@@ -166,13 +172,21 @@ function showBottomImageContent(index) {
   
   // 이미지 로드 이벤트
   bottomImage.onload = function() {
-    // 추가적인 스타일 적용으로 테두리 제거
+    // 추가적인 스타일 적용
     bottomImage.style.border = 'none';
     bottomImage.style.outline = 'none';
+    bottomImage.style.objectFit = 'cover';
+    bottomImage.style.objectPosition = 'center -50px'; // 윗부분 50px 크롭
+    
+    // 컨테이너 표시하기
     bottomImageContainer.style.display = 'block';
     
     // 약간의 지연 후 애니메이션 시작
     setTimeout(() => {
+      // 슬라이드 업 애니메이션: 컨테이너를 아래에서 위로 올림
+      bottomImageContainer.style.bottom = '-80px'; // -80px 위치로 이동
+      
+      // 이미지 불투명도 애니메이션
       bottomImage.classList.add('show');
     }, 50);
   };
@@ -212,6 +226,8 @@ function showBottomVideoContent(index) {
     bottomVideo.style.webkitTouchCallout = 'none';
     bottomVideo.style.maxWidth = '100.24vw';
     bottomVideo.style.maxHeight = '50.13vh';
+    bottomVideo.style.objectFit = 'cover';
+    bottomVideo.style.objectPosition = 'center -50px'; // 윗부분 50px 크롭
     
     // 중앙 플레이 버튼이 표시되지 않도록 설정
     bottomVideo.setAttribute('disableRemotePlayback', ''); // 원격 재생 버튼 비활성화
@@ -221,9 +237,8 @@ function showBottomVideoContent(index) {
     bottomVideo.style.borderRadius = '0';
     bottomVideo.style.boxShadow = 'none';
     bottomVideo.style.backgroundColor = 'transparent';
-    bottomVideo.style.transform = 'scale(0)';
     bottomVideo.style.opacity = '0';
-    bottomVideo.style.transition = 'all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    bottomVideo.style.transition = 'opacity 3s cubic-bezier(0.16, 0.81, 0.32, 1)'; // 더 천천히(3초) 페이드인 되며 더 강화된 ease-out 효과
     bottomImageContainer.appendChild(bottomVideo);
   }
   
@@ -286,7 +301,10 @@ function showBottomVideoContent(index) {
     
     // 애니메이션 시작
     setTimeout(() => {
-      bottomVideo.style.transform = 'scale(1)';
+      // 슬라이드 업 애니메이션: 컨테이너를 아래에서 위로 올림
+      bottomImageContainer.style.bottom = '-80px'; // -80px 위치로 이동 (CSS에서 설정한 기존값과 동일)
+      
+      // 비디오 불투명도 애니메이션
       bottomVideo.style.opacity = '1';
       
       // 재생 상태면 재생 시작
@@ -316,6 +334,7 @@ function showBottomVideoContent(index) {
 function resetBottomMediaElements() {
   const bottomImage = document.getElementById('bottomImage');
   const bottomVideo = document.getElementById('bottomVideo');
+  const bottomImageContainer = document.getElementById('bottomImageContainer');
   
   if (bottomImage) {
     bottomImage.classList.remove('show');
@@ -323,9 +342,13 @@ function resetBottomMediaElements() {
   }
   
   if (bottomVideo) {
-    bottomVideo.style.transform = 'scale(0)';
     bottomVideo.style.opacity = '0';
     bottomVideo.pause();
     bottomVideo.src = '';
+  }
+  
+  // 컨테이너 위치 초기화 (화면 밖으로)
+  if (bottomImageContainer) {
+    bottomImageContainer.style.bottom = '-150vh';
   }
 }
