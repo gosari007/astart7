@@ -6,11 +6,24 @@ function showSentenceImage(sentenceIndex) {
     
     console.log(`상단 이미지 표시 시작 (홀수 문장): 문장 번호 ${realSentenceNumber}`);
     
-    // 이전 이미지/동영상이 있다면 먼저 숨기기
+    // 첫번째 폭발인지 확인 (window.firstExplosionHappened 플래그 사용)
+    if (typeof window.firstExplosionHappened === 'undefined') {
+      window.firstExplosionHappened = false;
+    }
     const sentenceImageContainer = document.getElementById('sentenceImageContainer');
+    if (!window.firstExplosionHappened) {
+      // 만약 hideSentenceImage 예약 타이머가 있으면 취소
+      if (window.hideSentenceImageTimer) {
+        clearTimeout(window.hideSentenceImageTimer);
+        window.hideSentenceImageTimer = null;
+      }
+      window.firstExplosionHappened = true;
+      showNewSentenceMedia(realSentenceNumber);
+      return;
+    }
+    // 이전 이미지/동영상이 있다면 먼저 숨기기
     if (sentenceImageContainer && sentenceImageContainer.style.display === 'block') {
       hideSentenceImage();
-      
       // 이미지/동영상이 완전히 사라진 후 새 이미지/동영상 표시
       setTimeout(() => {
         showNewSentenceMedia(realSentenceNumber);
@@ -25,6 +38,11 @@ function showSentenceImage(sentenceIndex) {
 }
 
 function showNewSentenceMedia(realSentenceNumber) {
+  // 미디어 표시 직전에 숨김 예약 타이머가 있으면 반드시 취소
+  if (window.hideSentenceImageTimer) {
+    clearTimeout(window.hideSentenceImageTimer);
+    window.hideSentenceImageTimer = null;
+  }
   const sentenceImageContainer = document.getElementById('sentenceImageContainer');
   const sentenceImage = document.getElementById('sentenceImage');
   
@@ -357,8 +375,13 @@ function hideSentenceImage() {
     }
     
     // 애니메이션 완료 후 컨테이너 숨기기
-    setTimeout(() => {
+    if (window.hideSentenceImageTimer) {
+      clearTimeout(window.hideSentenceImageTimer);
+      window.hideSentenceImageTimer = null;
+    }
+    window.hideSentenceImageTimer = setTimeout(() => {
       sentenceImageContainer.style.display = 'none';
+      window.hideSentenceImageTimer = null;
     }, 1500); // 1.5초 후 완전히 숨김
   }
 }

@@ -688,7 +688,7 @@ async function getWordTranslation(word, targetLang = 'ko') {
     "mom": "엄마", "in": "～안에", "her": "그녀의", "blue": "파란", "basket": "바구니",
     "how": "어떻게", "catch": "잡다", "tiny": "아주 작은", "rainbow": "무지개",
     "butterfly": "나비", "net": "그물", "and": "그리고", "be": "이다/되다", "is": "이다", "are": "이다/있다", "was": "~이었다", "were": "~이었다", // "is", "are", "was", "were" 추가
-    "very": "매우", "gentle": "부드러운", "won’t": "～하지 않을 것이다", "wont": "～하지 않을 것이다",
+    "very": "매우", "gentle": "부드러운", "won't": "～하지 않을 것이다", "wont": "～하지 않을 것이다",
     "share": "공유하다", "from": "～로부터", "your": "너의/당신의", "lunchbox": "점심 도시락",
     "jelly": "젤리", "special": "특별한", "why": "왜", "sister": "자매/언니/누나",
     "play": "놀다", "tag": "술래잡기", "us": "우리", "she": "그녀", "feels": "느끼다",
@@ -697,9 +697,9 @@ async function getWordTranslation(word, targetLang = 'ko') {
     "tidy": "단정한/정돈하다", "allowed": "허용된", "snacks": "간식", "library": "도서관",
     "room": "방", "tomorrow": "내일", "zoo": "동물원", "grandpa": "할아버지", "his": "그의",
     "knee": "무릎", "toy": "장난감", "car": "자동차", "break": "고장나다/부수다", "again": "다시",
-    "soon": "곧", "don’t": "～하지 않다", "dont": "～하지 않다", "crash": "충돌하다",
+    "soon": "곧", "don't": "～하지 않다", "dont": "～하지 않다", "crash": "충돌하다",
     "hard": "세게/어려운", "would": "～일 것이다 (가정)", "do": "하다", "does": "하다 (3인칭 단수)", "did": "했다", // "does", "did" 추가
-    "flying": "나는", "carpet": "양탄자", "fly": "날다", "grandma’s": "할머니의",
+    "flying": "나는", "carpet": "양탄자", "fly": "날다", "grandma's": "할머니의",
     "grandmas": "할머니의", "house": "집", "cookies": "쿠키들", "cookie": "쿠키",
     "he": "그", "cry": "울다", "watching": "보는 중", "movie": "영화", "puppy": "강아지",
     "got": "얻었다/되었다", "lost": "잃어버린", "visit": "방문하다", "underwater": "물속의",
@@ -708,7 +708,7 @@ async function getWordTranslation(word, targetLang = 'ko') {
     "talk": "말하다", "forest": "숲", "elf": "요정", "whisper": "속삭이다", "magic": "마법/마법의",
     "ring": "반지/울리다", "kite": "연", "stuck": "걸린/꼼짝 못하는", "dad": "아빠",
     "help": "돕다", "long": "긴/오랫동안", "stick": "막대기/붙이다",
-    "wouldn’t": "～하지 않을 것이다 (가정)", "wouldnt": "～하지 않을 것이다 (가정)",
+    "wouldn't": "～하지 않을 것이다 (가정)", "wouldnt": "～하지 않을 것이다 (가정)",
     "eat": "먹다", "even": "심지어", "hungry": "배고픈", "broccoli": "브로콜리",
     "ice": "얼음", "cream": "크림", "yucky": "역겨운", "teddy": "테디베어", "bear": "곰/참다",
     "tea": "차", "outside": "밖에", "together": "함께", "started": "시작했다", "start": "시작하다",
@@ -724,7 +724,7 @@ async function getWordTranslation(word, targetLang = 'ko') {
     "tree": "나무", "fix": "고치다", "robot": "로봇", "dinner": "저녁", "jump": "뛰다",
     "so": "그렇게/매우", "high": "높이/높은", "like": "～처럼/좋아하다",
     "that": "저것/그것/그 (접속사/지시형용사)", "practiced": "연습했다", "every": "매",
-    "day": "날", "trampoline": "트램펄린", "can’t": "～할 수 없다", "cant": "～할 수 없다",
+    "day": "날", "trampoline": "트램펄린", "can't": "～할 수 없다", "cant": "～할 수 없다",
     "before": "～전에", "open": "열다/열린", "jar": "병/단지", "locked": "잠긴",
     "tight": "단단히/꽉 끼는", "kitchen": "부엌", "cooking": "요리하는 중",
     "crumbs": "부스러기", "couch": "소파", "keep": "유지하다/계속하다", "secrets": "비밀들",
@@ -737,7 +737,7 @@ async function getWordTranslation(word, targetLang = 'ko') {
     "last": "지난/마지막의", "night": "밤", "rolled": "굴러갔다", "chest": "상자/가슴",
     "bed": "침대", "taken": "가져간/차지된", "garden": "정원", "while": "～하는 동안/반면에",
     "safely": "안전하게", "carry": "나르다", "superhero": "슈퍼히어로", "backpack": "배낭",
-    "couldn’t": "～할 수 없었다", "couldnt": "～할 수 없었다", "paper": "종이",
+    "couldn't": "～할 수 없었다", "couldnt": "～할 수 없었다", "paper": "종이",
     "show": "보여주다/쇼", "puppet": "인형", "missing": "사라진/잃어버린/그리워하는",
     "race": "경주/경주하다", "thunder": "천둥", "loud": "시끄러운/큰 소리로",
     "lemonade": "레모네이드", "stand": "서다/가판대", "set": "놓다/세우다/설정하다", // "set" 추가
@@ -745,7 +745,7 @@ async function getWordTranslation(word, targetLang = 'ko') {
     "socks": "양말", "getting": "되는 중/얻는 중", "dry": "마른/말리다",
     "without": "～없이", "rain": "비/비가 오다", "boots": "장화", "on": "위에/계속",
     "join": "참여하다/함께하다", // "join" 추가
-    "bringback": "데려오다", "setup": "설치하다", "it’s": "그것은 ~이다", "its": "그것의",
+    "bringback": "데려오다", "setup": "설치하다", "it's": "그것은 ~이다", "its": "그것의",
     "he's": "그는 ~이다", "hes": "그는 ~이다", "she's": "그녀는 ~이다", "shes": "그녀는 ~이다",
     "you're": "너는 ~이다", "youre": "너는 ~이다", "we're": "우리는 ~이다",
     "they're": "그들은 ~이다", "theyre": "그들은 ~이다", "i'm": "나는 ~이다", "im": "나는 ~이다",
@@ -762,18 +762,18 @@ async function getWordTranslation(word, targetLang = 'ko') {
     "we'd": "우리는 ~하곤 했다/우리는 ~할 것이다", "wed": "우리는 ~하곤 했다/우리는 ~할 것이다/결혼하다",
     "they'd": "그들은 ~하곤 했다/그들은 ~할 것이다", "theyd": "그들은 ~하곤 했다/그들은 ~할 것이다",
     "let's": "～하자", "lets": "～하자/허락하다",
-    "doesn’t": "～하지 않는다", "doesnt": "～하지 않는다",
-    "didn’t": "～하지 않았다", "didnt": "～하지 않았다",
-    "mom’s": "엄마의", "moms": "엄마의",
-    "dad’s": "아빠의", "dads": "아빠의",
+    "doesn't": "～하지 않는다", "doesnt": "～하지 않는다",
+    "didn't": "～하지 않았다", "didnt": "～하지 않았다",
+    "mom's": "엄마의", "moms": "엄마의",
+    "dad's": "아빠의", "dads": "아빠의",
     "grandpa's": "할아버지의", "grandpas": "할아버지의",
-    "wasn’t": "～이 아니었다 (과거)", "wasnt": "～이 아니었다 (과거)",
-    "weren’t": "～들이 아니었다 (과거)", "werent": "～들이 아니었다 (과거)",
-    "hasn’t": "～한 적이 없다 (현재완료)", "hasnt": "～한 적이 없다 (현재완료)",
-    "haven’t": "～한 적이 없다 (현재완료)", "havent": "～한 적이 없다 (현재완료)",
-    "hadn’t": "～한 적이 없었다 (과거완료)", "hadnt": "～한 적이 없었다 (과거완료)",
-    "isn’t": "～이 아니다", "isnt": "～이 아니다",
-    "aren’t": "～들이 아니다", "arent": "～들이 아니다",
+    "wasn't": "～이 아니었다 (과거)", "wasnt": "～이 아니었다 (과거)",
+    "weren't": "～들이 아니었다 (과거)", "werent": "～들이 아니었다 (과거)",
+    "hasn't": "～한 적이 없다 (현재완료)", "hasnt": "～한 적이 없다 (현재완료)",
+    "haven't": "～한 적이 없다 (현재완료)", "havent": "～한 적이 없다 (현재완료)",
+    "hadn't": "～한 적이 없었다 (과거완료)", "hadnt": "～한 적이 없었다 (과거완료)",
+    "isn't": "～이 아니다", "isnt": "～이 아니다",
+    "aren't": "～들이 아니다", "arent": "～들이 아니다",
     
     "giggling": "킥킥 웃는",
     "slip": "미끄러짐/실수",
@@ -2713,7 +2713,9 @@ function drawSingleSentenceBlock(sentenceObject, baseY, isQuestionBlock, blockCo
     const isCurrentBlockContentQuestionType = isQuestion(sentenceFullText);    for (let i = 0; i < lines.length; i++) {
         const lineText = lines[i];
         let currentLineCenterY = yFirstLineTextCenter + i * LINE_HEIGHT;
-          // 각 줄마다 색상 플래그 초기화 (줄별로 독립적으로 색상 처리)
+          // 모바일 환경 감지
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        // 각 줄마다 색상 플래그 초기화 (줄별로 독립적으로 색상 처리)
         // 의문문과 답변문을 분리해서 처리
         if (isCurrentBlockContentQuestionType) {
             // 의문문 문장일 경우, 원래 색상 로직 유지
@@ -2742,7 +2744,10 @@ function drawSingleSentenceBlock(sentenceObject, baseY, isQuestionBlock, blockCo
         } else {
             if (i === 1) currentLineCenterY += 10;
         }
-
+        // 두번째 문장만 핸드폰(모바일)에서 y축 6px 더 위로 올림 (기존 -5px에서 -11px로)
+        if (isMobile && i === 1) {
+            currentLineCenterY -= 11;
+        }
 
         const words = lineText.split(" ");
         let wordMetrics = words.map(w => ctx.measureText(w));
@@ -3698,7 +3703,12 @@ function update(delta) {
             
             // 모든 문장에 대해 상단 이미지 표시 (조건 제거)
             if (typeof showSentenceImage === 'function') {
-                showSentenceImage(globalIndexOfSentence);
+                if (explosionCount === 0) {
+                    // 첫번째 폭발(게임 시작 후 첫번째)에서는 setTimeout 없이 바로 미디어 표시
+                    showSentenceImage(globalIndexOfSentence);
+                } else {
+                    showSentenceImage(globalIndexOfSentence);
+                }
             }
             
             startFireworks(sentenceToFirework, globalIndexOfSentence, e.x + e.w / 2, e.y + e.h / 2);
@@ -4267,7 +4277,7 @@ canvas.addEventListener('touchmove', e => {
     touch.clientY >= (playButtonRectQuestion.y - expandedMargin) && touch.clientY <= (playButtonRectQuestion.y + playButtonRectQuestion.h + expandedMargin);
   const isOverPlayBtnA = showPlayButton && playButtonRect &&
     touch.clientX >= (playButtonRect.x - expandedMargin) && touch.clientX <= (playButtonRect.x + playButtonRect.w + expandedMargin) &&
-    touch.clientY >= (playButtonRect.y - expandedMargin) && touch.clientY <= (playButtonRect.y + playButtonRectQuestion.h + expandedMargin);
+    touch.clientY >= (playButtonRect.y - expandedMargin) && touch.clientY <= (playButtonRect.y + playButtonRect.h + expandedMargin);
   
   // 문장 영역 확인
   let isOverSentenceArea = false;
@@ -4518,7 +4528,7 @@ function populateSentenceList() {
     }
       // 기존 목록 비우기
     sentenceList.innerHTML = '';    // 모든 문장 표시
-    // 전체 문장을 모두 표시
+    // 반드시 영어 문장 배열만 사용
     const sentencesToShow = sentences;
     
     sentencesToShow.forEach((sentence, index) => {
