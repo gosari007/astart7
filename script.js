@@ -419,7 +419,7 @@ const PETAL_FLUTTER_AMPLITUDE_BASE = 3.5;
 const PETAL_FLUTTER_SPEED_BASE = 3.0;
 
 const SENTENCE_VERTICAL_ADJUSTMENT = -36; // 기존 -31에서 5px 더 감소시켜 첫 번째 문장을 추가로 위로 올림
-const ANSWER_OFFSET_Y = 74; // 기존 67에서 7px 증가시켜 두 번째 문장만 더 아래로 내림
+const ANSWER_OFFSET_Y = 67; // 67로 변경하여 두 번째 문장을 7px 위로 올림
 const LINE_HEIGHT = 30;
 const PLAYER_TOUCH_Y_OFFSET = 15;
 
@@ -3265,7 +3265,7 @@ function startFireworks(sentenceTextForFireworks, globalSentenceIndex, explosion
         sentenceActive = false; return;
     }
 
-    const baseRadius = 51.2 * 0.88; const maxRadius = 120.96 * 0.88 * 0.95; // Adjusted maxRadius
+    const baseRadius = 51.2 * 0.88; const maxRadius = 120.96 * 0.88 * 0.95 * 0.93 * 0.95 * 0.94; // Adjusted maxRadius - 7% 축소 + 5% 축소 + 추가 6% 축소
     let centerX = explosionX; const margin = 8;
     if (centerX - maxRadius < margin) centerX = margin + maxRadius;
     if (centerX + maxRadius > canvas.width - margin) centerX = canvas.width - margin - maxRadius;    fireworks = [];    fireworksState = {
